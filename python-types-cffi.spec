@@ -2,7 +2,7 @@
 
 Name:		python-types-cffi
 Version:	1.17.0.20250319
-Release:	1
+Release:	2
 Source0:	https://files.pythonhosted.org/packages/source/t/types-cffi/%{module}-%{version}.tar.gz
 Summary:	Typing stubs for cffi
 URL:		https://pypi.org/project/types-cffi/
@@ -13,8 +13,9 @@ BuildArch:	noarch
 
 BuildRequires:	python
 BuildRequires:	pkgconfig(python3)
-BuildRequires:	python-setuptools
-Requires:	python-types-setuptools
+BuildRequires:	python%{pyver}dist(setuptools)
+Requires:	python%{pyver}dist(types-setuptools)
+Provides:	python%{pyver}dist(%{module})
 
 %description
 Typing stubs for cffi
